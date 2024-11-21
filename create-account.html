@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Màn hình tạo tài khoản -->
+    <div id="create-account-screen" class="screen">
+        <h2>Create Your Account</h2>
+        <form id="create-account-form">
+            <input type="text" id="new-username" placeholder="Username" required><br>
+            <input type="password" id="new-password" placeholder="Password" required><br>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required><br>
+            <button type="submit">Create Account</button>
+        </form>
+        <p id="create-account-error" style="color: red;"></p>
+        <br>
+        <a href="index.html">Back to Login</a>
+    </div>
+
+    <script src="create-account.js"></script>
+</body>
+</html>

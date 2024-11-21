@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Game</title>
+    <!-- Thêm Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Thêm Font chữ từ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Logo Game 24h với tên -->
+    <div class="logo-container">
+        <span class="logo-text">Game 24H</span>
+    </div>
+
+    <!-- Màn hình đăng nhập -->
+    <div id="login-screen" class="screen">
+        <h2>Login to Play</h2>
+        <form id="login-form" method="POST">
+            <input type="text" name="username" id="username" placeholder="Username" required><br>
+            <input type="password" name="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-error" style="color: red;"></p>
+
+        <div class="auth-links">
+            <a href="create-account.html">Create Account</a> |
+            <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+    </div>
+
+    <!-- Màn hình game -->
+    <div id="game-screen" class="screen" style="display:none;">
+        <h2>Welcome to the Game!</h2>
+        <p>Your game starts here.</p>
+        <!-- Khi nhấn nút, sẽ dẫn đến trang game -->
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Đảm bảo rằng các phần tử nằm theo chiều dọc */
+}
+
+/* Định dạng cho logo Game 24h */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px; /* Khoảng cách giữa logo và form */
+    perspective: 500px; /* Tạo hiệu ứng phối cảnh cho logo */
+}
+
+.logo-text {
+    font-family: 'Press Start 2P', cursive; /* Sử dụng font chữ game */
+    font-size: 40px;
+    font-weight: bold;
+    color: #4CAF50; /* Màu sắc của chữ */
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Khoảng cách giữa các ký tự */
+    transition: transform 0.4s ease, text-shadow 0.4s ease; /* Hiệu ứng chuyển động mượt mà */
+}
+
+/* Hiệu ứng 3D khi hover lên logo */
+.logo-text:hover {
+    transform: rotateY(15deg) rotateX(10deg) scale(1.1); /* Xoay và phóng to logo */
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ cho chữ */
+}
+
+/* Định dạng cho khung form */
+.screen {
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;  /* Tăng padding để form rộng rãi hơn */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;  /* Đảm bảo form sẽ luôn chiếm 100% chiều rộng */
+    max-width: 400px;  /* Đặt chiều rộng tối đa cho khung form */
+    margin: 0 auto; /* Căn giữa form theo chiều ngang */
+}
+
+/* Tiêu đề */
+h2 {
+    margin-bottom: 30px;
+    font-size: 26px;  /* Lớn hơn một chút để dễ đọc */
+}
+
+/* Input (username, password) */
+input {
+    width: 100%;           /* Đảm bảo trường input chiếm 100% chiều rộng */
+    max-width: 350px;      /* Giới hạn chiều rộng tối đa của các trường input */
+    padding: 12px;
+    margin-bottom: 10px;   /* Giảm khoảng cách giữa các trường nhập liệu */
+    margin-left: auto;     /* Căn giữa trường */
+    margin-right: auto;    /* Căn giữa trường */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Nút login */
+button {
+    padding: 12px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;           /* Đảm bảo nút chiếm 100% chiều rộng */
+    max-width: 350px;      /* Giới hạn chiều rộng tối đa của nút */
+    margin-left: auto;     /* Căn giữa nút */
+    margin-right: auto;    /* Căn giữa nút */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Căn chỉnh các form */
+#login-form, #create-account-form, #forgot-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  /* Thêm khoảng cách giữa các trường */
+}
+
+/* Liên kết quên mật khẩu và tạo tài khoản */
+.auth-links {
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 14px;
+}
+
+/* Đảm bảo giao diện trên thiết bị di động */
+@media screen and (max-width: 600px) {
+    .screen {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+}
