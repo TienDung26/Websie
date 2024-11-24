@@ -35,7 +35,7 @@ body {
 
 /* Nếu muốn di chuyển logo sang trái hoặc phải */
 .logo-container {
-    margin-left: 0px; /* Di chuyển logo sang trái */
+    margin-left: 3px; /* Di chuyển logo sang trái */
     /* hoặc */
     /* margin-right: 50px; Di chuyển logo sang phải */
 }
