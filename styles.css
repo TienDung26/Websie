@@ -1,93 +1,189 @@
 /* Định dạng chung */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+   background: #000000; /* Đổi nền sang màu đen */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    flex-direction: column; /* Đảm bảo rằng các phần tử nằm theo chiều dọc */
+    flex-direction: column;
 }
-
-/* Định dạng cho logo Game 24h */
 .logo-container {
-    text-align: center;
-    margin-bottom: 20px; /* Khoảng cách giữa logo và form */
-    perspective: 500px; /* Tạo hiệu ứng phối cảnh cho logo */
+    display: flex;
+    justify-content: flex-start; /* Căn trái */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .logo-text {
-    font-family: 'Press Start 2P', cursive; /* Sử dụng font chữ game */
-    font-size: 40px;
-    font-weight: bold;
-    color: #4CAF50; /* Màu sắc của chữ */
-    text-transform: uppercase;
-    letter-spacing: 5px; /* Khoảng cách giữa các ký tự */
-    transition: transform 0.4s ease, text-shadow 0.4s ease; /* Hiệu ứng chuyển động mượt mà */
+    margin-left: 80px; /* Điều chỉnh khoảng cách từ trái */
 }
+
+/* Văn bản logo */
+.logo-text {
+    font-family: 'Press Start 2P', cursive; /* Font chữ game */
+    font-size: 40px; /* Kích thước chữ lớn */
+    font-weight: bold; /* Chữ đậm */
+    background: linear-gradient(90deg, #f9d423, #ff4e50); /* Màu đầu tiên */
+    -webkit-background-clip: text; /* Áp dụng gradient cho chữ */
+    -webkit-text-fill-color: transparent; /* Làm chữ trong suốt */
+    text-transform: uppercase; /* Viết hoa toàn bộ chữ */
+    letter-spacing: 5px; /* Khoảng cách giữa các chữ */
+    text-align: left; /* Căn giữa chữ */
+    display: block; /* Đảm bảo logo là khối */
+    animation: blink 2s infinite, rainbow 4s infinite; /* Thêm hiệu ứng nhấp nháy và thay đổi màu sắc liên tục */
+}
+
+/* Hiệu ứng nhấp nháy */
+@keyframes blink {
+    0% {
+        opacity: 1; /* Logo hiển thị bình thường */
+    }
+    50% {
+        opacity: 0.5; /* Logo mờ đi một chút */
+    }
+    100% {
+        opacity: 1; /* Logo quay lại hiển thị bình thường */
+    }
+}
+
+/* Định nghĩa keyframes để thay đổi màu theo cầu vồng */
+@keyframes rainbow {
+    0% {
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Cầu vồng */
+    }
+    20% {
+        background: linear-gradient(90deg, blue, green, yellow, red, violet, indigo, orange); /* Thay đổi theo hướng ngược */
+    }
+    40% {
+        background: linear-gradient(90deg, yellow, orange, green, blue, indigo, violet, red); /* Cầu vồng màu khác */
+    }
+    60% {
+        background: linear-gradient(90deg, purple, blue, green, yellow, orange, red, pink); /* Đảo các màu */
+    }
+    80% {
+        background: linear-gradient(90deg, orange, yellow, green, blue, red, purple, pink); /* Các màu khác nữa */
+    }
+    100% {
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Quay lại cầu vồng ban đầu */
+    }
+}
+
+/* Áp dụng hiệu ứng nhấp nháy vào logo */
+.logo-text {
+    animation: blink 1.5s infinite; /* Thêm hiệu ứng nhấp nháy */
+}
+
 
 /* Hiệu ứng 3D khi hover lên logo */
 .logo-text:hover {
-    transform: rotateY(15deg) rotateX(10deg) scale(1.1); /* Xoay và phóng to logo */
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ cho chữ */
+    transform: rotateY(15deg) rotateX(10deg) scale(1.1);
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), 
+                 -5px -5px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Định dạng cho khung form */
 .screen {
     text-align: center;
-    background-color: white;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
     border-radius: 15px;
-    padding: 40px;  /* Tăng padding để form rộng rãi hơn */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;  /* Đảm bảo form sẽ luôn chiếm 100% chiều rộng */
-    max-width: 400px;  /* Đặt chiều rộng tối đa cho khung form */
-    margin: 0 auto; /* Căn giữa form theo chiều ngang */
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.5);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */
 }
 
 /* Tiêu đề */
 h2 {
-    margin-bottom: 30px;
-    font-size: 26px;  /* Lớn hơn một chút để dễ đọc */
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Input (username, password) */
 input {
-    width: 100%;           /* Đảm bảo trường input chiếm 100% chiều rộng */
-    max-width: 350px;      /* Giới hạn chiều rộng tối đa của các trường input */
+    width: calc(100% - 40px); /* Điều chỉnh để có khoảng cách đều nhau */
     padding: 12px;
-    margin-bottom: 10px;   /* Giảm khoảng cách giữa các trường nhập liệu */
-    margin-left: auto;     /* Căn giữa trường */
-    margin-right: auto;    /* Căn giữa trường */
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    margin: 10px auto; /* Căn giữa theo chiều ngang */
+    border-radius: 25px;
+    border: 1px solid #ddd;
     font-size: 16px;
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+    transition: box-shadow 0.3s ease;
 }
 
-/* Nút login */
+input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #4caf50, inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+}
+.login-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff4e50;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: slideIn 1s ease-in-out 1; /* Chỉ chạy một lần khi tải lại trang */
+    margin-bottom: 20px; /* Khoảng cách giữa login-text và các phần tử bên dưới */
+}
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Nút đăng nhập */
 button {
     padding: 12px 15px;
-    background-color: #4CAF50;
+    background: linear-gradient(90deg, #4caf50, #8bc34a);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%;           /* Đảm bảo nút chiếm 100% chiều rộng */
-    max-width: 350px;      /* Giới hạn chiều rộng tối đa của nút */
-    margin-left: auto;     /* Căn giữa nút */
-    margin-right: auto;    /* Căn giữa nút */
+    width: calc(100% - 30px); /* Điều chỉnh để có khoảng cách đều nhau */
+    margin: 10px auto; /* Căn giữa theo chiều ngang */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hiệu ứng hover khi di chuột lên nút */
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(90deg, #45a049, #7cb342); /* Thay đổi màu nền khi hover */
+    transform: scaleX(1.05); /* Mở rộng chiều ngang của nút */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ khi hover */
 }
 
 /* Căn chỉnh các form */
 #login-form, #create-account-form, #forgot-password-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;  /* Thêm khoảng cách giữa các trường */
+    gap: 20px;
 }
 
 /* Liên kết quên mật khẩu và tạo tài khoản */
@@ -96,17 +192,21 @@ button:hover {
 }
 
 .auth-links a {
-    color: #007bff;
+    color: #4caf50;
     text-decoration: none;
     font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .auth-links a:hover {
+    color: #388e3c;
     text-decoration: underline;
 }
 
 p {
     font-size: 14px;
+    color: #555;
 }
 
 /* Đảm bảo giao diện trên thiết bị di động */
