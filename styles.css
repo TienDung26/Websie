@@ -9,7 +9,6 @@ body {
     margin: 0;
     flex-direction: column;
 }
-
 /* Logo Container */
 .logo-container {
     display: flex;
@@ -35,12 +34,11 @@ body {
 }
 
 /* Nếu muốn di chuyển logo sang trái hoặc phải */
-/* .logo-container {
-    margin-left: 50px; Di chuyển logo sang trái
-    hoặc
-    margin-right: 50px; Di chuyển logo sang phải
-} */
-
+.logo-container {
+    margin-left: 20px; /* Di chuyển logo sang trái */
+    /* hoặc */
+    /* margin-right: 50px; Di chuyển logo sang phải */
+}
 /* Hiệu ứng nhấp nháy */
 @keyframes blink {
     0% {
