@@ -1,7 +1,7 @@
 /* Định dạng chung */
 body {
     font-family: Arial, sans-serif;
-   background: #000000; /* Đổi nền sang màu đen */
+    background: #000000; /* Đổi nền sang màu đen */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,19 +9,15 @@ body {
     margin: 0;
     flex-direction: column;
 }
+
 .logo-container {
     display: flex;
-    justify-content: flex-start; /* Căn trái */
+    justify-content: center; /* Căn giữa logo */
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
 }
 
-.logo-text {
-    margin-left: 80px; /* Điều chỉnh khoảng cách từ trái */
-}
-
-/* Văn bản logo */
 .logo-text {
     font-family: 'Press Start 2P', cursive; /* Font chữ game */
     font-size: 40px; /* Kích thước chữ lớn */
@@ -31,9 +27,10 @@ body {
     -webkit-text-fill-color: transparent; /* Làm chữ trong suốt */
     text-transform: uppercase; /* Viết hoa toàn bộ chữ */
     letter-spacing: 5px; /* Khoảng cách giữa các chữ */
-    text-align: left; /* Căn giữa chữ */
+    text-align: center; /* Căn giữa chữ */
     display: block; /* Đảm bảo logo là khối */
     animation: blink 2s infinite, rainbow 4s infinite; /* Thêm hiệu ứng nhấp nháy và thay đổi màu sắc liên tục */
+    margin: 0; /* Đảm bảo không có khoảng cách thừa */
 }
 
 /* Hiệu ứng nhấp nháy */
@@ -75,7 +72,6 @@ body {
 .logo-text {
     animation: blink 1.5s infinite; /* Thêm hiệu ứng nhấp nháy */
 }
-
 
 /* Hiệu ứng 3D khi hover lên logo */
 .logo-text:hover {
@@ -122,6 +118,7 @@ input:focus {
     outline: none;
     box-shadow: 0 0 8px #4caf50, inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
 }
+
 .login-text {
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
@@ -134,17 +131,6 @@ input:focus {
     animation: slideIn 1s ease-in-out 1; /* Chỉ chạy một lần khi tải lại trang */
     margin-bottom: 20px; /* Khoảng cách giữa login-text và các phần tử bên dưới */
 }
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 
 @keyframes slideIn {
     0% {
