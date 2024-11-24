@@ -9,8 +9,6 @@ body {
     margin: 0;
     flex-direction: column;
 }
-
-}
 .logo-container {
     display: flex;
     justify-content: flex-start; /* Căn trái */
