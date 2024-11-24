@@ -12,11 +12,16 @@ body {
 
 .logo-container {
     display: flex;
-    justify-content: center; /* Căn giữa logo */
+    justify-content: flex-start; /* Căn trái */
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
 }
+
+.logo-text {
+    margin-left: 90px; /* Điều chỉnh khoảng cách từ trái */
+}
+
 
 .logo-text {
     font-family: 'Press Start 2P', cursive; /* Font chữ game */
