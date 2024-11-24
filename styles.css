@@ -9,21 +9,16 @@ body {
     margin: 0;
     flex-direction: column;
 }
+/* Logo Container */
 .logo-container {
     display: flex;
-    justify-content: flex-start; /* Căn trái */
-    align-items: center;
+    justify-content: center;  /* Căn giữa theo chiều ngang */
+    align-items: center;      /* Căn giữa theo chiều dọc */
     width: 100%;
     margin-bottom: 20px;
 }
 
-.logo-text {
-    margin-left: 80px; /* Điều chỉnh khoảng cách từ trái */
-}
-
-
-
-
+/* Logo Text */
 .logo-text {
     font-family: 'Press Start 2P', cursive; /* Font chữ game */
     font-size: 40px; /* Kích thước chữ lớn */
@@ -32,13 +27,18 @@ body {
     -webkit-background-clip: text; /* Áp dụng gradient cho chữ */
     -webkit-text-fill-color: transparent; /* Làm chữ trong suốt */
     text-transform: uppercase; /* Viết hoa toàn bộ chữ */
-    letter-spacing: 5px; /* Khoảng cách giữa các chữ */
+    letter-spacing: 0px; /* Khoảng cách giữa các chữ */
     text-align: center; /* Căn giữa chữ */
-    display: block; /* Đảm bảo logo là khối */
-    animation: blink 2s infinite, rainbow 4s infinite; /* Thêm hiệu ứng nhấp nháy và thay đổi màu sắc liên tục */
+    display: inline-block; /* Đảm bảo logo và tên trong cùng một dòng */
     margin: 0; /* Đảm bảo không có khoảng cách thừa */
 }
 
+/* Nếu muốn di chuyển logo sang trái hoặc phải */
+.logo-container {
+    margin-left: 50px; /* Di chuyển logo sang trái */
+    /* hoặc */
+    /* margin-right: 50px; Di chuyển logo sang phải */
+}
 /* Hiệu ứng nhấp nháy */
 @keyframes blink {
     0% {
@@ -96,7 +96,6 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */
 }
 
 /* Tiêu đề */
