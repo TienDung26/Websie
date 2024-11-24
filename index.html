@@ -21,14 +21,12 @@
     <main>
         <!-- Login Screen -->
         <section id="login-screen" class="screen">
-            <div class="login-text">Login to Play</div>
+            <h2>Login to Play</h2>
             <form id="login-form" method="POST">
                 <label for="username" class="visually-hidden">
                 <input type="text" name="username" id="username" placeholder="Username" required><br>
-                
                 <label for="password" class="visually-hidden">
                 <input type="password" name="password" id="password" placeholder="Password" required><br>
-
                 <button type="submit" class="btn">Login</button>
             </form>
             <p id="login-error" style="color: red;" aria-live="polite"></p>
@@ -36,7 +34,8 @@
             <div class="auth-links">
                 <a href="create-account.html" title="Create a new account">Create Account</a> |
                 <a href="forgot-password.html" title="Reset your password">Forgot Password?</a>
-            </div>
+            </div
+            
         </section>
 
         <!-- Game Screen -->
@@ -60,8 +59,7 @@
                 const username = document.getElementById("username").value.trim();
                 const password = document.getElementById("password").value.trim();
 
-                // Replace with actual validation
-                if (username === "test" && password === "1234") { 
+                if (username === "test" && password === "1234") { // Replace with actual validation
                     loginScreen.style.display = "none";
                     gameScreen.style.display = "block";
                 } else {
