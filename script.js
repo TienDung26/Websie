@@ -1,15 +1,3 @@
-// Tạo một danh sách người dùng giả lập (có thể thay thế bằng cơ sở dữ liệu)
-const users = [
-    { username: "admin", password: "123456" },
-    { username: "user2", password: "password2" }
-];
-
-// Hàm để kiểm tra đăng nhập
-function checkLogin(username, password) {
-    const user = users.find(u => u.username === username && u.password === password);
-    return user ? true : false;
-}
-
 // Xử lý sự kiện đăng nhập
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();  // Ngừng việc gửi form
@@ -17,12 +5,29 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    if (checkLogin(username, password)) {
-        document.getElementById("login-screen").style.display = "none";
-        document.getElementById("game-screen").style.display = "block";
-    } else {
-        document.getElementById("login-error").textContent = "Invalid username or password!";
-    }
+    // Gửi yêu cầu kiểm tra đăng nhập đến API (Node.js)
+    fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: username, password: password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Login successful') {
+            // Đăng nhập thành công
+            document.getElementById("login-screen").style.display = "none";
+            document.getElementById("game-screen").style.display = "block";
+        } else {
+            // Đăng nhập thất bại
+            document.getElementById("login-error").textContent = data.message || "Invalid username or password!";
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById("login-error").textContent = "An error occurred. Please try again later.";
+    });
 });
 
 // Chức năng bắt đầu game
